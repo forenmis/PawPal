@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBanner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/white" />
+
+        <View
+            android:id="@+id/greenView"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_margin="18dp"
+            android:background="@color/green_light"
+            android:rotation="170"
+            android:rotationX="20"
+            app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBannerDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:gravity="start"
+            android:rotation="350"
+            android:rotationX="10"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/greenView"
+            app:layout_constraintEnd_toEndOf="@id/greenView"
+            app:layout_constraintStart_toStartOf="@id/greenView"
+            app:layout_constraintTop_toBottomOf="@id/blackView"
+            app:textAllCaps="true"
+            tools:text="summer sale at" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBannerDescriptionPercent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginStart="16dp"
+            android:gravity="end"
+            android:rotation="350"
+            android:rotationX="10"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/greenView"
+            app:layout_constraintEnd_toEndOf="@id/greenView"
+            app:layout_constraintStart_toStartOf="@id/greenView"
+            app:textAllCaps="true"
+            tools:text="50$" />
+
+        <View
+            android:id="@+id/blackView"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/black"
+            android:rotation="170"
+            android:rotationY="20"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBanner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="257dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBannerTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="2"
+            android:rotation="350"
+            android:rotationY="20"
+            android:textColor="@color/green_light"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/blackView"
+            app:layout_constraintEnd_toEndOf="@id/blackView"
+            app:layout_constraintStart_toStartOf="@id/blackView"
+            app:layout_constraintTop_toTopOf="@id/blackView"
+            app:textAllCaps="true"
+            tools:text="summer salebbhb" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="blackView, greenView, tvBannerDescription, tvBannerDescriptionPercent, tvBannerTitle, ivBanner" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressIndicator"
+            style="Widget.Material3.CircularProgressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorColor="@color/green_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFoodHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/food"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivBanner" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="8dp"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFoodHeader"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_dashboard"
+            tools:orientation="horizontal" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvToyHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/toys"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvFood" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvToys"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvToyHeader"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_dashboard" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="rvFood, rvToys, tvFoodHeader, tvToyHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

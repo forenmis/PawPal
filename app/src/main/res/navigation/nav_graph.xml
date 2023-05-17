@@ -1,0 +1,98 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstScreenFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.pawpal.screens.authorization.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.pawpal.screens.authorization.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+
+        <action
+            android:id="@+id/action_registrationFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.pawpal.screens.onboarding.OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pawpal.screens.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_createNotificationFragment"
+            app:destination="@id/createNotificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationDetailsFragment"
+            app:destination="@id/notificationDetailsFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstScreenFragment"
+        android:name="com.example.pawpal.screens.splash_screen.FirstScreenFragment"
+        android:label="FirstScreenFragment">
+        <action
+            android:id="@+id/action_firstScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/firstScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_firstScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/firstScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNotificationFragment"
+        android:name="com.example.pawpal.screens.home.medicine.create_notification.CreateNotificationFragment"
+        android:label="CreateNotificationFragment"
+        tools:layout="@layout/fragment_notification_create" />
+    <fragment
+        android:id="@+id/notificationDetailsFragment"
+        android:name="com.example.pawpal.screens.home.medicine.history_notification.details.NotificationDetailsFragment"
+        android:label="NotificationDetailsFragment"
+        tools:layout="@layout/fhagment_notification_details">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuFragmentDashboard"
+        android:enabled="true"
+        android:title="@string/main"
+        android:icon="@drawable/ic_paw" />
+
+    <item
+        android:id="@+id/menuFragmentMedicine"
+        android:enabled="true"
+        android:icon="@drawable/ic_medicine"
+        android:title="@string/medicine"/>
+
+    <item
+        android:id="@+id/menuFragmentContacts"
+        android:enabled="true"
+        android:icon="@drawable/ic_contacts"
+        android:title="@string/contacts"/>
+
+    <item
+        android:id="@+id/menuFragmentSettings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings"/>
+
+</menu>
