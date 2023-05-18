@@ -5,5 +5,5 @@ Our app also offers a convenient quick access feature where you can add your fav
 
 ![paw_pal](https://github.com/forenmis/PawPal/assets/126270280/3c168a24-baf4-48d7-94a2-9e5f1aae9c5e)
 
-**Stack of technologies:** Android SDK, Kotlin, RxJava, RxAndroid, MVVM, LiveData, Room, Retrofit, Okhttp, Gson, ViewBinding, Material Design library, Jetpack Navigation component, Glide, DialogFragment, KTX
+**Stack of technologies:** Android SDK, Kotlin, RxJava, RxAndroid, MVVM, LiveData, DialogFragment, KTX, Alarm Manager, Notifications, Room, Retrofit, OkHttp, Gson, ViewBinding, Material Design library, Jetpack Navigation component, Glide
 
