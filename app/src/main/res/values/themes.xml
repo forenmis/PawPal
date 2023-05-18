@@ -24,9 +24,4 @@
         <item name="cornerSize">16dp</item>
     </style>
 
-    <style name="SwitchColor">
-        <item name="colorSurfaceVariant">@color/grey_light</item>
-        <item name="colorOutline">@color/grey_light</item>
-        <item name="colorOnPrimary">@color/green_light</item>
-    </style>
 </resources>

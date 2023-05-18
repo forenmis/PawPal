@@ -27,7 +27,7 @@ class NotificationListViewModel(private val application: Application) :
         loadList()
     }
 
-    private fun loadList() {
+    fun loadList() {
         val disposable = databaseManager.getAllNotifications()
             .map { petNotifications ->
                 val items = mutableListOf<ItemNotifications>()

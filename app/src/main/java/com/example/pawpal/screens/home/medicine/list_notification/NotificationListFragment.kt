@@ -44,6 +44,8 @@ class NotificationListFragment : Fragment() {
             rvNotifications.adapter = adapter
         }
         viewModel.listItemsLD.observe(viewLifecycleOwner) { adapter.updateItems(it) }
-
+        viewModelHome.refreshLD.observe(viewLifecycleOwner) {
+            if (it) viewModel.loadList() else viewModelHome.refreshLD.postValue(false)
+        }
     }
 }

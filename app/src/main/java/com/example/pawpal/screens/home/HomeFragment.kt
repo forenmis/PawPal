@@ -72,7 +72,6 @@ class HomeFragment : Fragment() {
         viewModel.navigationLD.observe(viewLifecycleOwner) { isNavigate ->
             if (isNavigate) {
                 viewModel.navigationLD.postValue(false)
-
                 val action =
                     HomeFragmentDirections.actionHomeFragmentToCreateNotificationFragment()
                 findNavController().navigate(action)

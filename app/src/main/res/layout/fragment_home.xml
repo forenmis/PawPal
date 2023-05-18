@@ -16,8 +16,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomBar"
         android:layout_width="0dp"
-        app:itemIconTint="@color/selector"
-        app:itemTextColor="@color/selector"
+        app:itemIconTint="@color/selector_track"
+        app:itemTextColor="@color/selector_track"
         app:menu="@menu/menu_bottom_navigation"
         app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"

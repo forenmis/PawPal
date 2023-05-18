@@ -13,6 +13,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val processExitLD = MutableLiveData(false)
     val navigationLD = MutableLiveData(false)
     val idNotificationLD = MutableLiveData<Long>()
+    val refreshLD = MutableLiveData(false)
 
     private val appPreference = App.getInstance(application).appPreference
     private val compositeDisposable = CompositeDisposable()

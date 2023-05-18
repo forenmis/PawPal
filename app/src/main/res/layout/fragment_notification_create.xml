@@ -58,7 +58,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilTitleNotification"
-        app:trackTint="@color/selector" />
+        app:thumbTint="@color/selector_thumb"
+        app:trackTint="@color/selector_track" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilStartAtDate"
@@ -126,7 +127,8 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etRemindAt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton

@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.pawpal.databinding.FragmentNotificationCreateBinding
+import com.example.pawpal.screens.home.HomeViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -18,6 +20,7 @@ import java.util.Calendar
 class CreateNotificationFragment : Fragment() {
 
     private val viewModel by viewModels<CreateNotificationViewModel>()
+    private val viewModelHome by activityViewModels<HomeViewModel>()
 
     private lateinit var binding: FragmentNotificationCreateBinding
 
@@ -37,7 +40,10 @@ class CreateNotificationFragment : Fragment() {
             dateLD.observe(viewLifecycleOwner) { binding.etStartAtDate.setText(it) }
             processLD.observe(viewLifecycleOwner) { isProgress ->
                 binding.progressGroup.isVisible = isProgress
-                if (isProgress == false) findNavController().popBackStack()
+                if (isProgress == false) {
+                    viewModelHome.refreshLD.postValue(true)
+                    findNavController().popBackStack()
+                }
             }
             completeFillLD.observe(viewLifecycleOwner) {
                 binding.btSaveNotification.isEnabled = it
@@ -53,7 +59,9 @@ class CreateNotificationFragment : Fragment() {
             etRemindAt.doAfterTextChanged { viewModel.changeRemind(it.toString().toInt()) }
             etStartAtTime.setOnClickListener { showTimePicker() }
             etStartAtDate.setOnClickListener { showDatePicker() }
-            btSaveNotification.setOnClickListener { viewModel.saveNotification() }
+            btSaveNotification.setOnClickListener {
+                viewModel.saveNotification()
+            }
         }
     }
 
