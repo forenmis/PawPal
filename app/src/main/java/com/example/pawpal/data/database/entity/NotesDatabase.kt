@@ -6,7 +6,7 @@ import com.example.pawpal.screens.home.medicine.entity.Note
 
 @Entity
 data class NotesDatabase(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val notificationId: Long,
     val title: String

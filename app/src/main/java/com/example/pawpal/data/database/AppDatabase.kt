@@ -11,7 +11,7 @@ import com.example.pawpal.data.database.entity.PetNotificationDatabase
         PetNotificationDatabase::class,
         NotesDatabase::class
     ],
-    version = 2
+    version = 3
 )
 internal abstract class AppDatabase : RoomDatabase() {
     abstract fun notificationDao(): PetNotificationDao
