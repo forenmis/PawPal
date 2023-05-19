@@ -59,5 +59,4 @@ class NotificationListViewModel(private val application: Application) :
         super.onCleared()
         compositeDisposable.dispose()
     }
-
 }

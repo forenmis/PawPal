@@ -10,7 +10,7 @@ import com.example.pawpal.screens.home.medicine.entity.Note
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.VH>() {
 
     private val itemNotes = mutableListOf<Note>()
-
+    var callbackNoteClick: ((Long) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         return VH(ItemNotesBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -23,6 +23,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.VH>() {
     override fun onBindViewHolder(holder: VH, position: Int) {
         val note = itemNotes[position]
         holder.feelItemNote(note)
+        holder.binding.root.setOnClickListener { callbackNoteClick?.invoke(note.notificationId) }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -32,8 +33,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.VH>() {
         notifyDataSetChanged()
     }
 
-    class VH(private val binding: ItemNotesBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class VH(val binding: ItemNotesBinding) : RecyclerView.ViewHolder(binding.root) {
         fun feelItemNote(note: Note) {
             binding.tvNoteTitle.text = note.title
         }

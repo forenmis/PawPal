@@ -32,10 +32,14 @@ class DatabaseManager(context: Context) {
     }
 
     fun getNotificationById(id: Long): Single<Pair<PetNotification, List<Note>>> {
-        return database.notificationDao().getById(id).map { notificationsWithNotes ->
+        return database.notificationDao().getNotificationById(id).map { notificationsWithNotes ->
             val notification = notificationsWithNotes.petNotificationDatabase.toNotification()
             val notes = notificationsWithNotes.notes.map { it.toNote() }
             notification to notes
         }
+    }
+
+    fun getAllNotes(): Single<List<Note>> {
+        return database.notificationDao().getAllNotes().map { notes -> notes.map { it.toNote() } }
     }
 }
