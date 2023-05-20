@@ -54,6 +54,7 @@ class CreateNotificationFragment : Fragment() {
                 tilPeriod.isVisible = isChecked
                 viewModel.changeIsPeriod(isChecked)
             }
+            ivBack.setOnClickListener { findNavController().popBackStack() }
             etTitleNotification.doAfterTextChanged { viewModel.changeTitle(it.toString()) }
             etPeriod.doAfterTextChanged { viewModel.changePeriod(it.toString().toInt()) }
             etRemindAt.doAfterTextChanged { viewModel.changeRemind(it.toString().toInt()) }
